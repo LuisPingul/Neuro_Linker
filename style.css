@@ -1,0 +1,534 @@
+/* --- CSS VARIABLES & RESET --- */
+:root {
+    --neon-green: #39ff14;
+    --neon-pink: #ff00ff;
+    --neon-blue: #00ffff;
+    --bg-dark: #050505;
+    --bg-card: #111111;
+    --text-main: #e0e0e0;
+    --font-head: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;      
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 {
+    font-family: var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* --- NAVIGATION (Flexbox) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(5, 5, 5, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neon-blue);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 8px var(--neon-pink);
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    white-space: nowrap;
+    text-shadow: 2px 2px var(--neon-pink);
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    color: var(--neon-green);
+    margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-right: 10px;
+    font-family: var(--font-head);
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--neon-pink);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    border-color: var(--neon-pink);
+    color: var(--neon-pink);
+}
+
+.btn-secondary {
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* --- FEATURES (CSS Grid) --- */
+.features-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+    border-bottom: 2px solid var(--neon-green);
+    display: inline-block;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    border-color: var(--neon-green);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(57, 255, 20, 0.2);
+}
+
+.feature-card .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* --- ABOUT SECTION (Flexbox) --- */
+.about-section {
+    padding: 80px 10%;
+    background: #0a0a0a;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--neon-pink);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+}
+
+/* --- PRICING --- */
+.pricing-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.pricing-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: var(--bg-card);
+    padding: 40px;
+    width: 300px;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--neon-blue);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-family: var(--font-head);
+    color: #fff;
+    margin: 20px 0;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pricing-card ul li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 5px;
+
+}
+
+.billing-period {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 25px; /* This adds the space you asked for */
+    display: block;      /* Ensures the margin works correctly */
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #000;
+    padding: 50px 10% 20px;
+    border-top: 1px solid #222;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    color: var(--neon-green);
+    margin-bottom: 15px;
+}
+
+.footer-col a {
+    display: block;
+    margin-bottom: 8px;
+    color: #888;
+}
+
+.footer-col a:hover {
+    color: var(--neon-green);
+    padding-left: 5px;
+}
+
+.copyright {
+    text-align: center;
+    color: #444;
+    font-size: 0.9rem;
+    border-top: 1px solid #111;
+    padding-top: 20px;
+}
+
+/* --- HAMBURGER MENU STYLES --- */
+.hamburger {
+    display: none; /* Hide on desktop by default */
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--neon-blue); /* This gives the bars their color */
+}
+
+/* --- UPDATED MOBILE RESPONSIVE SECTION --- */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Stops horizontal scrolling when menu slides in */
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh; /* Height of screen minus header */
+        top: 8vh;
+        background-color: #050505; /* Dark background */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%); /* Hide it off-screen by default */
+        transition: transform 0.5s ease-in;
+        border-left: 1px solid var(--neon-blue);
+        z-index: 999;
+    }
+
+    /* This class is added by JavaScript to show the menu */
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-links li {
+        opacity: 0; /* Fade in text later */
+        animation: navLinkFade 0.5s ease forwards 0.3s;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Hero adjustments */
+    .hero-section {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        padding-top: 100px;
+    }
+}
+
+/* Animation for menu items appearing */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* --- NEW HARDWARE SECTION --- */
+.hardware-section {
+    padding: 80px 10%;
+    background-color: #080808;
+    border-bottom: 1px solid #222;
+}
+
+.hardware-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.hardware-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hardware-visual {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hardware-visual img {
+    width: 100%;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+}
+
+.hardware-specs {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.hardware-specs li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--neon-green);
+}
+
+.hardware-price {
+    font-size: 2.5rem;
+    font-family: var(--font-head);
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hardware-price .tax {
+    font-size: 1rem;
+    color: #888;
+}
+
+/* --- TOGGLE SWITCH STYLES --- */
+.pricing-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border: 1px solid #555;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--neon-pink);
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.save-badge {
+    background-color: var(--neon-green);
+    color: #000;
+    font-size: 0.8rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+/* --- CYBER MODAL STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Very dark background */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+}
+
+.modal-box {
+    background: #000;
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+    padding: 40px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    animation: modalSlide 0.3s ease-out;
+}
+
+.modal-box h3 {
+    color: var(--neon-blue);
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+}
+
+.modal-box p {
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 25px 0;
+}
+
+@keyframes modalSlide {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
