@@ -1,4 +1,6 @@
-# Neuro_LinkerStudent Name: Pingul, Michael Luis Benedick R.
+# Neuro_Linker
+
+Student Name: Pingul, Michael Luis Benedick R.
 Student ID: 111806
 Section: 2A - IT ELEC 3
 
