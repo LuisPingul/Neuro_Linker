@@ -532,3 +532,78 @@ input:checked + .slider:before {
     from { transform: translateY(-50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+/* --- MOBILE REPAIR KIT (Responsive Fixes) --- */
+@media (max-width: 768px) {
+
+    /* 1. HERO SECTION FIXES */
+    .hero-section {
+        flex-direction: column-reverse; /* Puts text below image on phone */
+        padding-top: 100px; /* More space for the fixed header */
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Shrink the huge "NEURO-LINKER" text */
+        white-space: normal; /* Allow it to wrap if needed */
+        line-height: 1.1;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-image img {
+        max-width: 80%; /* Shrink the hero image slightly */
+        margin-bottom: 30px;
+    }
+
+    /* 2. HARDWARE SECTION FIXES */
+    .hardware-container {
+        flex-direction: column; /* Stack text on top of image */
+        gap: 30px;
+    }
+    
+    .hardware-visual img {
+        max-width: 100%; /* Ensure image fits screen */
+    }
+
+    /* 3. CAPABILITIES / FEATURES FIXES */
+    .features-grid {
+        grid-template-columns: 1fr; /* Force 1 column instead of 3 */
+        gap: 20px;
+    }
+
+    .feature-card {
+        margin-bottom: 20px;
+    }
+
+    /* 4. PRICING SECTION FIXES */
+    .pricing-toggle-container {
+        flex-direction: row; /* Keep toggle on one line */
+        justify-content: center;
+        font-size: 1rem; /* Smaller text for "Monthly/Yearly" */
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .pricing-wrapper {
+        flex-direction: column; /* Stack the 3 pricing cards */
+        align-items: center;
+        gap: 30px;
+    }
+
+    .pricing-card {
+        width: 100%; /* Cards take full width */
+        max-width: 350px;
+    }
+
+    /* 5. GENERAL TEXT FIXES */
+    .section-title {
+        font-size: 2rem; /* Shrink section headers like "SYSTEM CAPABILITIES" */
+    }
+
+    p {
+        font-size: 1rem; /* Make paragraph text readable but not huge */
+    }
+}
